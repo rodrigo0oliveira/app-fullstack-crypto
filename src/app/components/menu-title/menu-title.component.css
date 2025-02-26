@@ -5,10 +5,9 @@
 .menu-title-container > h1{
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 100px;
+    font-size: 80px;
     display: flex;
     justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .menu-title-container > hr {
