@@ -1,0 +1,22 @@
+.container_menu > ul{
+    display: flex;
+    list-style: none;
+}
+
+.container_menu > ul{
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+a{
+    color: rgb(172, 171, 171)
+}
+
+a:hover{
+    color: white;
+}
