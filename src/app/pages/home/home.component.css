@@ -1,0 +1,9 @@
+.container_cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header{
+    margin-top: 20px;
+}
