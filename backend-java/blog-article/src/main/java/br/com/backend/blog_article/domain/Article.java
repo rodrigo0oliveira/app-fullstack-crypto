@@ -1,12 +1,8 @@
 package br.com.backend.blog_article.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.time.LocalDate;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
 @AllArgsConstructor
@@ -19,11 +15,15 @@ public class Article {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private String id;
+    private Long id;
 
+    @NotNull
     private String title;
 
+    @NotNull
+    @Column(columnDefinition = "TEXT")
     private String description;
 
-    private LocalDate creationDate;
+    @NotNull
+    private String linkImg;
 }

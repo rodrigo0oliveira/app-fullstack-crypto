@@ -1,19 +1,18 @@
 package br.com.backend.blog_article.application;
 
 import br.com.backend.blog_article.domain.Article;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/article")
+@RequiredArgsConstructor
 public class ArticleController {
 
-    private ArticleService articleService;
+    private final ArticleService articleService;
 
     @GetMapping
     public ResponseEntity<List<Article>> getAllArticles(){
@@ -21,7 +20,8 @@ public class ArticleController {
         return ResponseEntity.ok().body(articles);
     }
 
-    public ResponseEntity<Article> getArticleById(@RequestBody String id){
+    @GetMapping(params = "id")
+    public ResponseEntity<Article> getArticleById(@RequestParam Long id){
         Article article = articleService.getArticleById(id);
         return ResponseEntity.ok().body(article);
     }
