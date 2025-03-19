@@ -2,6 +2,7 @@ package br.com.backend.blog_article.application;
 
 import br.com.backend.blog_article.domain.Article;
 import br.com.backend.blog_article.infra.repository.ArticleRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,7 @@ public class ArticleService {
     }
 
     public Article getArticleById(Long id){
-        return articleRepository.findById(id).orElse(null);
+        return articleRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Artigo com id: "+id+" não encontrado"));
     }
 
 }
