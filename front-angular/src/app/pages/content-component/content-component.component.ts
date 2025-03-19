@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { dataFakeCryto } from '../../data/datafakeCrypto';
+import { ArticleService } from '../../services/article.service';
+import { Article } from '../../models/Article';
+
 
 @Component({
   selector: 'app-content-component',
@@ -11,29 +13,44 @@ import { dataFakeCryto } from '../../data/datafakeCrypto';
 
 export class ContentComponent implements OnInit {
 
-  private id:string|null = "";
+  private id:string|null = null;
   photo:string = "";
   title:string = ""
   description = "";
 
-  constructor(private route :ActivatedRoute){}
+  article:Article|any = {
+    id:"",
+    title:"",
+    description:"",
+    link_img:""
+  };
+
+  constructor(private route :ActivatedRoute,private articleService:ArticleService){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(value => 
       this.id = value.get("id")
     ) 
 
-    this.setValuesToComponent(this.id);
+    if(this.id){
+      this.setValuesToComponent(this.id);
+    }
   }
 
-  setValuesToComponent(id:string|null):void{
-    const result = dataFakeCryto.filter(article =>
-      article.id === id
-    )[0]
+  setValuesToComponent(id:string):void{
+    this.article = this.articleService.getArticleById(id).subscribe(
+      {
+        next:res=>{
+          id=res.id,
+          this.title=res.title,
+          this.description=res.description,
+          this.photo=res.linkImg
+        },
+        error : err => console.log(err)
+      }
+    );
 
-    this.photo = result.photo
-    this.title = result.title
-    this.description = result.description
+    console.log(this.article);
   }
 
   

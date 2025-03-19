@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/article")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class ArticleController {
 
     private final ArticleService articleService;
