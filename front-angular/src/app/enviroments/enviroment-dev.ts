@@ -1,4 +1,4 @@
 export const enviroment = {
     producion:false,
-    blogAPI:"http://localhost:8081"
+    blogAPI:"http://localhost:8080"
 }
