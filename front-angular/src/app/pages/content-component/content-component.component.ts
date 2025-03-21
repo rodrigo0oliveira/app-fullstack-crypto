@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../services/article.service';
 import { Article } from '../../models/Article';
+import { MenuBarComponent } from '../../components/menu-bar/menu-bar.component';
 
 
 @Component({
   selector: 'app-content-component',
-  imports: [],
+  imports: [MenuBarComponent],
   templateUrl: './content-component.component.html',
   styleUrl: './content-component.component.css'
 })
