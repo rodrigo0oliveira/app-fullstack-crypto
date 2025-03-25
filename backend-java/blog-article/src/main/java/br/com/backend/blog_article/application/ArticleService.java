@@ -6,7 +6,6 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -14,11 +13,7 @@ public class ArticleService {
 
     private final ArticleRepository articleRepository;
 
-    public List<Article> getAllArticles(){
-        return articleRepository.findAll();
-    }
-
-    public Article getArticleById(Long id){
+    public Article getArticleById(String id){
         return articleRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Artigo com id: "+id+" não encontrado"));
     }
 
