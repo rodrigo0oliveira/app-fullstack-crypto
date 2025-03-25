@@ -14,6 +14,7 @@ main{
 
     span{
         color: #1E2772;
+        background-color: #FFFFFF;
     }
 
     .main-section{
@@ -32,19 +33,23 @@ main{
         background-color: #FFFFFF;
         flex-grow: 0.3;
         padding: 0 35px;
+        
 
         h2{
             font-size: 20px;
             font-weight: bold;
             color: #1E2772;
             margin-bottom: 45px;
+            background-color: #FFFFFF;
         }
 
         img{
             margin-bottom: 45px;
+            background-color: #FFFFFF;
         }
 
         .btn-wrapper{
+            background-color: #FFFFFF;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,6 +58,7 @@ main{
             gap: 30px;
 
             button{
+                background-color: #FFFFFF;
                 width: 100%;
                 border-radius: 8px;
                 font-size: 16px;
