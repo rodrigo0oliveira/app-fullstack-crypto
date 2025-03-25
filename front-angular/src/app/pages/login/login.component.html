@@ -1,1 +1,18 @@
-<app-default-layout-login></app-default-layout-login>
+<app-default-layout-login
+    title="Entre na sua conta"
+    primaryBtnText="Entre agora"
+    secondaryBtnText="Cadastre-se agora"
+>
+    <form [formGroup]="loginForm">
+        <app-primary-input
+        type="email"
+        placeHolder="exemple@gmail.com"
+        formControlName="email">
+        </app-primary-input>
+        <app-primary-input
+        type="password"
+        placeHolder="Digite sua senha aqui"
+        formControlName="password">
+        </app-primary-input>
+    </form>
+</app-default-layout-login>
