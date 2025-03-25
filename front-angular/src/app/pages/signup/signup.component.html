@@ -1,0 +1,28 @@
+<app-default-layout-login
+    title="Registre-se agora"
+    primaryBtnText="Cadastrar"
+    secondaryBtnText="Não tenho conta">
+    
+    <form [formGroup]="signupForm">
+        <app-primary-input
+        type="text"
+        placeHolder="Digite seu nome de usuário aqui"
+        formControlName="username">
+        </app-primary-input>
+        <app-primary-input
+        type="email"
+        placeHolder="exemple@gmail.com"
+        formControlName="email">
+        </app-primary-input>
+        <app-primary-input
+        type="password"
+        placeHolder="Digite sua senha aqui"
+        formControlName="password">
+        </app-primary-input>
+        <app-primary-input
+        type="password"
+        placeHolder="Confirme a sua senha"
+        formControlName="confirmPassword">
+        </app-primary-input>
+    </form>
+</app-default-layout-login>

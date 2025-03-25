@@ -2,9 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #111111;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
-    border-radius: 5px;
+    background-color: #1E2772;
+}
+
+html,body{
+    height: 100%;
 }
