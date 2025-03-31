@@ -15,14 +15,8 @@ public class ArticleController {
 
     private final ArticleService articleService;
 
-    @GetMapping
-    public ResponseEntity<List<Article>> getAllArticles(){
-        List<Article> articles = articleService.getAllArticles();
-        return ResponseEntity.ok().body(articles);
-    }
-
     @GetMapping(params = "id")
-    public ResponseEntity<Article> getArticleById(@RequestParam Long id){
+    public ResponseEntity<Article> getArticleById(@RequestParam String id){
         Article article = articleService.getArticleById(id);
         return ResponseEntity.ok().body(article);
     }
