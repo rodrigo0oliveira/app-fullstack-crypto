@@ -3,7 +3,7 @@ spring:
     name: blog-security
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
   datasource:
     url: jdbc:mysql://localhost:3306/security_db
     username: root
@@ -14,7 +14,7 @@ spring:
       mode: always
 
 server:
-  port: 0
+  port: 8088
 
 eureka:
   client:
@@ -22,3 +22,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.instance.instance_id:${random.value}}
+
+jwt:
+  key: KR+NTtQXmg11QLDbT3HIiQsei4WCPs8+hFaD3mgSTk0=
+  expiration-time: 7200
