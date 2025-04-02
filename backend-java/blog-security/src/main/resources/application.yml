@@ -1,6 +1,6 @@
 spring:
   application:
-    name: blog-security
+    name: mssecurity
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -14,7 +14,7 @@ spring:
       mode: always
 
 server:
-  port: 8088
+  port: 0
 
 eureka:
   client:
