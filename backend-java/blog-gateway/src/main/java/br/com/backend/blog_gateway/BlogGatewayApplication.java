@@ -25,6 +25,7 @@ public class BlogGatewayApplication {
 						.filters(f-> f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
 						.uri("lb://msarticle"))
 				.route(r-> r.path("/auth/**","/auth").uri("lb://mssecurity"))
+				.route(r-> r.path("/comments").uri("lb://mscomments"))
 				.build();
 	}
 
