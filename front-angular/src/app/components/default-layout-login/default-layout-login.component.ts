@@ -1,4 +1,4 @@
-import { Component, INJECTOR, Input } from '@angular/core';
+import { Component, EventEmitter, INJECTOR, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -17,5 +17,19 @@ export class DefaultLayoutLoginComponent {
 
   @Input()
   secondaryBtnText = "";
+
+  @Output("submit")
+  onSubmit = new EventEmitter();
+
+  @Output("navigate")
+  onNavigate = new EventEmitter();
+
+  submit(){
+    this.onSubmit.emit();
+  }
+
+  navigate(){
+    this.onNavigate.emit();
+  }
 
 }
