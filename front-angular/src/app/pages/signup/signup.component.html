@@ -1,7 +1,9 @@
 <app-default-layout-login
     title="Registre-se agora"
     primaryBtnText="Cadastrar"
-    secondaryBtnText="Não tenho conta">
+    secondaryBtnText="Não tenho conta"
+    (submit)="submit()"
+    (navigate)="navigate('login')">
     
     <form [formGroup]="signupForm">
         <app-primary-input
