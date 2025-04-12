@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping("/auth")
@@ -19,14 +21,14 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/signup")
-    public ResponseEntity<String> signup(@RequestBody UserRequiredDto userRequiredDto) {
+    public ResponseEntity<String> signup(@RequestBody @Valid UserRequiredDto userRequiredDto) {
         String  message = authService.signup(userRequiredDto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(message);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<TokenResponse> login(@RequestBody LoginDto loginDto){
+    public ResponseEntity<TokenResponse> login(@RequestBody @Valid LoginDto loginDto){
 
         try{
             TokenResponse tokenResponse = authService.login(loginDto);

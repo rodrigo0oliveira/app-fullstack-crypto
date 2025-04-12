@@ -24,11 +24,12 @@ public class User implements UserDetails {
     private Long id;
 
     @NotNull
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Email
     @NotNull
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     private String email;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -37,6 +38,7 @@ public class User implements UserDetails {
     private Collection<Role> roles;
 
     @NotNull
+    @Column(nullable = false)
     private String password;
 
     @Override
