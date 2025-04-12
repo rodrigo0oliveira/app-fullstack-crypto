@@ -1,12 +1,12 @@
 package br.com.backend.blog_security.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.Email;
 import java.util.Collection;
 
 @Entity
@@ -23,12 +23,12 @@ public class User implements UserDetails {
     @Column(name = "user_id")
     private Long id;
 
-    @NotNull
+    @NotBlank
     @Column(nullable = false, unique = true)
     private String username;
 
     @Email
-    @NotNull
+    @NotBlank
     @Column(unique = true,nullable = false)
     private String email;
 
@@ -37,7 +37,7 @@ public class User implements UserDetails {
     joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
-    @NotNull
+    @NotBlank
     @Column(nullable = false)
     private String password;
 

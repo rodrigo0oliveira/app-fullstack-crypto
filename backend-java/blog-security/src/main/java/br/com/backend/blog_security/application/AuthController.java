@@ -3,13 +3,12 @@ package br.com.backend.blog_security.application;
 import br.com.backend.blog_security.domain.TokenResponse;
 import br.com.backend.blog_security.domain.dto.LoginDto;
 import br.com.backend.blog_security.domain.dto.UserRequiredDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 
 @RestController

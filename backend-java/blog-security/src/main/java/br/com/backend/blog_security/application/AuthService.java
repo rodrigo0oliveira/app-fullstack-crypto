@@ -32,7 +32,13 @@ public class AuthService {
 
     public String signup(UserRequiredDto userRequiredDto) {
 
+        log.info(userRequiredDto.toString());
+
         Role role = roleRepository.findByName("ROLE_USER");
+
+        if(userRequiredDto.password()==null){
+            throw new IllegalArgumentException("A senha precisa ser preenchida!");
+        }
 
         User user = User.builder()
                 .username(userRequiredDto.userName())
