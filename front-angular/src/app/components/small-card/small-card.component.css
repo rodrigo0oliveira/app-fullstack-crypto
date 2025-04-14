@@ -5,6 +5,10 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
+
+    a{
+        color:#1E2772;
+    }
 }
 
 .container_img > img{

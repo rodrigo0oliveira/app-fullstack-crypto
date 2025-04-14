@@ -4,6 +4,10 @@
     align-items: center;
     margin-top: 20px;
     height: 100vh;
+
+    h1,p{
+        color:#1E2772;
+    }
 }
 
 .container img{
