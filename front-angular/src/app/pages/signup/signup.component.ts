@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { SignupService } from '../../services/signup.service';
 import { User } from '../../models/User';
 import { HttpResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +24,7 @@ export class SignupComponent {
     password:""
   }
 
-  constructor(private router:Router,private signupService:SignupService){
+  constructor(private router:Router,private signupService:SignupService,private toastService:ToastrService){
     this.signupForm = new FormGroup({
       username:new FormControl("",[Validators.required,Validators.minLength(5)]),
       email:new FormControl("",[Validators.email,Validators.required]),
@@ -40,7 +41,7 @@ export class SignupComponent {
     const confirmPassword:string = this.signupForm.value.confirmPassword;
 
     if(!this.matchPassword(password,confirmPassword)){
-      alert("As senhas precisam ser iguais");
+      this.toastService.error("As duas senhas precisam ser iguais!");
       return;
     }
 
@@ -55,15 +56,16 @@ export class SignupComponent {
         const status:number = response.status;
         console.log(response.status)
         if(status!=201){
-          console.log("Ocorreu um erro ao realizar o cadastro,tente novamente");
+          this.toastService.error(response.body);
           return;
         }else{
-          console.log(response.body);
+          this.toastService.success(response.body);
         }
         
       },
       error:(erro)=>{
         console.log(erro);
+        this.toastService.error(erro.error);
       }
 
     })

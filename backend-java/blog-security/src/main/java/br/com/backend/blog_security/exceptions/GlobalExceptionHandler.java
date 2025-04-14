@@ -27,5 +27,10 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getBindingResult().getFieldError().getDefaultMessage());
     }
 
+    @ExceptionHandler({SignupException.class})
+    public ResponseEntity<String> handleSignupException(SignupException ex){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    }
+
 
 }

@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<TokenResponse> login(@RequestBody @Valid LoginDto loginDto){
+    public ResponseEntity<?> login(@RequestBody @Valid LoginDto loginDto){
 
         try{
             TokenResponse tokenResponse = authService.login(loginDto);
@@ -35,8 +35,7 @@ public class AuthController {
             return ResponseEntity.ok(tokenResponse);
         }catch (Exception e){
             log.error(e.getMessage());
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-
     }
 }

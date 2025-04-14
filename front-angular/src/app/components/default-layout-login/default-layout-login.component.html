@@ -4,7 +4,7 @@
         <h2>{{title}}</h2>
         <ng-content></ng-content>
         <div class="btn-wrapper">
-            <button class="primary"  (click)="submit()">{{primaryBtnText}}</button>
+            <button class="primary"  (click)="submit()"  [disabled]="disablePrimaryButton">{{primaryBtnText}}</button>
             <div>
                 <span>ou</span>
             </div>

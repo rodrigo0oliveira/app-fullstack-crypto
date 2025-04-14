@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoginRequired } from '../../models/LoginRequired';
 import { LoginService } from '../../services/login.service';
 import { HttpResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +23,9 @@ export class LoginComponent {
 
   loginForm!:FormGroup;
 
-  constructor(private router:Router,private loginService:LoginService){
+  constructor(private router:Router,private loginService:LoginService,private toastService:ToastrService){
     this.loginForm = new FormGroup({
-      username: new FormControl("",[Validators.required,Validators.email]),
+      username: new FormControl("",[Validators.required,Validators.minLength(5)]),
       password: new FormControl("",[Validators.required,Validators.minLength(8)])
     })
   }
@@ -42,10 +43,13 @@ export class LoginComponent {
       next:(response:HttpResponse<any>)=>{
         const status = response.status;
         if(status!=200){
-          console.log("Erro ao realizar o login");
+          this.toastService.error(response.body);
         }else{
-          console.log(response.body)
+          this.toastService.success("Login realizado com sucesso!")
         }
+      },
+      error:error =>{
+        this.toastService.error(error.error)
       }
     })
 

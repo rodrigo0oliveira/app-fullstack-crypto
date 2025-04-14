@@ -29,6 +29,7 @@ public class AuthService {
     private final RoleRepository roleRepository;
     private final AuthenticationManager authenticationManager;
     private final TokenProvider provider;
+    private final ValidateSignup validateSignup;
 
     public String signup(UserRequiredDto userRequiredDto) {
 
@@ -36,9 +37,7 @@ public class AuthService {
 
         Role role = roleRepository.findByName("ROLE_USER");
 
-        if(userRequiredDto.password()==null){
-            throw new IllegalArgumentException("A senha precisa ser preenchida!");
-        }
+        this.validateSignup.validateSignup(userRequiredDto);
 
         User user = User.builder()
                 .username(userRequiredDto.userName())
@@ -63,7 +62,7 @@ public class AuthService {
             return provider.generateToken(authentication);
         }
         catch (AuthenticationException e) {
-            throw new Exception("Credenciais inválidas : "+e.getMessage());
+            throw new Exception("Usuário ou senha inválidos");
         }
         catch (Exception e) {
             throw new Exception("Erro ao autenticar: "+e.getMessage());
