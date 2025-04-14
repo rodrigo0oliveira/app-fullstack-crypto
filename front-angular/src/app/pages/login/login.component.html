@@ -3,7 +3,8 @@
     primaryBtnText="Entre agora"
     secondaryBtnText="Cadastre-se agora"
     (submit)="submit()"
-    (navigate)="navigate('signup')">
+    (navigate)="navigate('signup')"
+    [disablePrimaryButton]="!loginForm.valid">
     
     
     <form [formGroup]="loginForm">

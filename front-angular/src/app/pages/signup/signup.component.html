@@ -3,7 +3,8 @@
     primaryBtnText="Cadastrar"
     secondaryBtnText="Não tenho conta"
     (submit)="submit()"
-    (navigate)="navigate('login')">
+    (navigate)="navigate('login')"
+    [disablePrimaryButton]="!signupForm.valid">
     
     <form [formGroup]="signupForm">
         <app-primary-input

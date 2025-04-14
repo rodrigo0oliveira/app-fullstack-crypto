@@ -21,7 +21,8 @@ main{
         gap: 40px;
         height: 100vh;
         flex-grow: 1;
-        background-color:#1E2772;
+        background-color: #1E2772;
+       
 
         h1{
             color: #FFFFFF;
@@ -67,6 +68,10 @@ main{
                 background: transparent;
                 padding: 12px 24px;
                 cursor: pointer;
+
+                &:disabled {
+                    opacity: 0.7;
+                }
                 
     
                 &.primary{

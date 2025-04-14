@@ -17,6 +17,8 @@ export class LoginService {
 
 
   login(loginRequired:LoginRequired):Observable<HttpResponse<any>>{
-    return this.httpClient.post<any>(this.baseUrl,loginRequired,{observe:'response'})
+    return this.httpClient.post<any>(this.baseUrl,
+      loginRequired,{observe:'response',
+        responseType:'text' as 'json'})
   }
 }
