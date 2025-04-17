@@ -48,7 +48,8 @@ public class AuthService {
 
         userRepository.save(user);
 
-        return "Conta criada com sucesso";
+        return "Conta criada com sucesso!\n" +
+                "Em instantes você será redirecionado para a página de login.";
     }
 
     public TokenResponse login(LoginDto login) throws Exception {
