@@ -11,7 +11,7 @@ export class UtilsService {
   setPage(page:string):void{
     setTimeout(()=>{
       this.router.navigate([page])
-    },5000   
+    },3000   
     )
   }
 }
