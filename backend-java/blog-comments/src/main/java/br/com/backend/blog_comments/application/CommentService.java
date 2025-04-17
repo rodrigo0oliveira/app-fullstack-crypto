@@ -1,9 +1,11 @@
 package br.com.backend.blog_comments.application;
 
+import br.com.backend.blog_comments.application.exceptions.CommentNotFoundException;
 import br.com.backend.blog_comments.infra.repository.CommentRepository;
 import br.com.backend.blog_comments.model.Comment;
 import br.com.backend.blog_comments.model.CommentDto;
 import br.com.backend.blog_comments.model.CommentRequired;
+import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,10 @@ public class CommentService {
     }
 
     public Set<CommentDto> findCommentByArticleId(Long articleId) {
-        return commentRepository.findCommentsByIdArticle(articleId);
+        Set<CommentDto> comments = commentRepository.findCommentsByIdArticle(articleId);
+        if(comments.isEmpty()) {
+            throw new CommentNotFoundException("Comments not found");
+        }
+        return comments;
     }
 }
