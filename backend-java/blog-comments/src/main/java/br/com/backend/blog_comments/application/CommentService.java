@@ -5,7 +5,7 @@ import br.com.backend.blog_comments.infra.repository.CommentRepository;
 import br.com.backend.blog_comments.model.Comment;
 import br.com.backend.blog_comments.model.CommentDto;
 import br.com.backend.blog_comments.model.CommentRequired;
-import jakarta.ws.rs.NotFoundException;
+import br.com.backend.blog_comments.model.CommentResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class CommentService {
 
     private final CommentRepository commentRepository;
 
-    public String createComment(CommentRequired commentRequired) {
+    public CommentResponseDto createComment(CommentRequired commentRequired) {
         Comment savedComment = Comment.builder()
                 .createdAt(LocalDateTime.now())
                 .userName(commentRequired.userName())
@@ -30,7 +30,7 @@ public class CommentService {
 
         commentRepository.save(savedComment);
 
-        return "Comment created: " + savedComment.getId();
+        return new CommentResponseDto("Comentário criado",savedComment.getId());
     }
 
     public Set<CommentDto> findCommentByArticleId(Long articleId) {

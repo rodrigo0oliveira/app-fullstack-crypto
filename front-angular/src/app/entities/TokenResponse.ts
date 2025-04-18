@@ -1,5 +1,5 @@
 export type TokenResponse = {
     token:string,
-    userEmail:string,
+    userName:string,
     expiresIn:number;
 }

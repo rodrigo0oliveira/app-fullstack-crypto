@@ -4,7 +4,7 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../../services/signup.service';
-import { User } from '../../models/User';
+import { User } from '../../entities/User';
 import { HttpResponse } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { UtilsService } from '../../services/utils.service';

@@ -30,3 +30,44 @@
 header{
     margin-top: 20px;
 }
+
+.title-comments{
+
+    display: flex;
+    flex-direction: column;
+
+    .input-box{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        
+
+        input{
+            width: 300px;
+            height: 40px;
+            color: #1E2772;
+            text-align: start;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        button{
+            color: #1E2772;
+            margin-left: 20px;
+            border-radius: 8px;
+            padding: 10px;
+        }
+    }
+
+
+    .title{
+
+        display: flex;
+        justify-content: center;
+
+        h1{
+            color: #1E2772;
+        }
+        
+    }
+}
