@@ -15,5 +15,5 @@ public class TokenResponse {
 
     private long expiresIn;
 
-    private String userEmail;
+    private String userName;
 }

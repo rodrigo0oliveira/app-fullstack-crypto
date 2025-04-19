@@ -1,8 +1,8 @@
 package br.com.backend.blog_comments.application;
 
-import br.com.backend.blog_comments.model.Comment;
 import br.com.backend.blog_comments.model.CommentDto;
 import br.com.backend.blog_comments.model.CommentRequired;
+import br.com.backend.blog_comments.model.CommentResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +14,14 @@ import java.util.Set;
 @RestController
 @RequestMapping("comments")
 @RequiredArgsConstructor
-@CrossOrigin("*")
 public class CommentController {
 
     private final CommentService commentService;
 
     @PostMapping
-    public ResponseEntity<String> createComment(@RequestBody @Valid CommentRequired commentRequired) {
-        String message = commentService.createComment(commentRequired);
-        return ResponseEntity.status(HttpStatus.CREATED).body(message);
+    public ResponseEntity<CommentResponseDto> createComment(@RequestBody @Valid CommentRequired commentRequired) {
+        CommentResponseDto commentDto = commentService.createComment(commentRequired);
+        return ResponseEntity.status(HttpStatus.CREATED).body(commentDto);
     }
 
     @GetMapping

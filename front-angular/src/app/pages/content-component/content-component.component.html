@@ -12,3 +12,14 @@
         <p>{{description}}</p>
     </div>
 </div>
+<div class="title-comments">
+    <div class="title">
+        <h1>Comentários</h1>
+    </div>
+    <div class="input-box">
+        <form>
+            <input type="text" [(ngModel)]="comment" [ngModelOptions]="{standalone:true}" placeholder="Escreva um comentário">
+        </form>
+        <button (click)="submit()">Enviar</button>
+    </div>
+</div>

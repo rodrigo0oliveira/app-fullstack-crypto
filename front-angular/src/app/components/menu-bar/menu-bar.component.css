@@ -14,9 +14,6 @@ li{
 }
 
 a{
-    color: rgb(172, 171, 171)
+    color: #1E2772;
 }
 
-a:hover{
-    color: white;
-}

@@ -63,7 +63,7 @@ public class TokenProvider {
         return TokenResponse.builder()
                 .token(auth)
                 .expiresIn(expirationInMillis)
-                .userEmail(user.getEmail())
+                .userName(user.getUsername())
                 .build();
     }
 

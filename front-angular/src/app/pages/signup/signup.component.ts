@@ -4,9 +4,10 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../../services/signup.service';
-import { User } from '../../models/User';
+import { User } from '../../entities/User';
 import { HttpResponse } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +25,10 @@ export class SignupComponent {
     password:""
   }
 
-  constructor(private router:Router,private signupService:SignupService,private toastService:ToastrService){
+  constructor(private router:Router,
+    private signupService:SignupService,
+    private toastService:ToastrService,
+    private utilsService:UtilsService){
     this.signupForm = new FormGroup({
       username:new FormControl("",[Validators.required,Validators.minLength(5)]),
       email:new FormControl("",[Validators.email,Validators.required]),
@@ -60,6 +64,7 @@ export class SignupComponent {
           return;
         }else{
           this.toastService.success(response.body);
+          this.utilsService.setPage('/login');
         }
         
       },
