@@ -5,6 +5,7 @@ import { CommentRequired } from '../entities/CommentRequired';
 import { enviroment } from '../enviroments/enviroment-dev';
 import { Observable } from 'rxjs';
 import { CommentResponse } from '../entities/CommentResponse';
+import { CommentDto } from '../entities/CommentDto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +25,17 @@ export class CommentService {
     this.baseUrl = enviroment.blogAPI+"/comments";
    }
 
-   createComment(commentRequired: CommentRequired): Observable<HttpResponse<CommentResponse>> {
+  createComment(commentRequired: CommentRequired): Observable<HttpResponse<CommentResponse>> {
     return this.httpClient.post<CommentResponse>(this.baseUrl, commentRequired,
        {observe: 'response',});
   }
+
+  findCommentsByArticleId(id:number):Observable<CommentDto[]> {
+    return this.httpClient.get<CommentDto[]>(this.baseUrl+"?articleId="+id);
+  }
+
+
+
+  
   
 }

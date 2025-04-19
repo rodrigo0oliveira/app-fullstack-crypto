@@ -11,11 +11,13 @@ import { UtilsService } from '../../services/utils.service';
 import { CommentService } from '../../services/comment.service';
 import { HttpResponse } from '@angular/common/http';
 import { CommentResponse } from '../../entities/CommentResponse';
+import { CommentDto } from '../../entities/CommentDto';
+import { CommentComponent } from '../../components/comment/comment.component';
 
 
 @Component({
   selector: 'app-content-component',
-  imports: [MenuBarComponent,FormsModule],
+  imports: [MenuBarComponent,FormsModule,CommentComponent],
   templateUrl: './content-component.component.html',
   styleUrl: './content-component.component.css'
 })
@@ -58,6 +60,7 @@ export class ContentComponent implements OnInit {
 
     if(this.id){
       this.setValuesToComponent(this.id);
+      this.showComments(this.id);
     }
   }
 
@@ -75,6 +78,21 @@ export class ContentComponent implements OnInit {
     );
 
     console.log(this.article);
+  }
+
+  showComments(id:string):void{
+    console.log("entrei aqui");
+    let comments:CommentDto[] =[];
+
+    this.commentService.findCommentsByArticleId(parseInt(id)).subscribe({
+      next:(response:CommentDto[])=>{
+        comments = response;
+        console.log(comments);
+      },
+      error:erro=>{
+        console.log("Errooor: "+erro);
+      }
+    })
   }
 
   submit():void{
