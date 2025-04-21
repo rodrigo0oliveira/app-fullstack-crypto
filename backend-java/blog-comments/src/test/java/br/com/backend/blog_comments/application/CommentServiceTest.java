@@ -5,6 +5,7 @@ import br.com.backend.blog_comments.infra.repository.CommentRepository;
 import br.com.backend.blog_comments.model.Comment;
 import br.com.backend.blog_comments.model.CommentDto;
 import br.com.backend.blog_comments.model.CommentRequired;
+import br.com.backend.blog_comments.model.CommentResponseDto;
 import org.junit.jupiter.api.Assertions;;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -45,9 +46,9 @@ public class CommentServiceTest {
 
         when(commentRepository.save(any(Comment.class))).thenReturn(comment);
 
-        String actualMessage = commentService.createComment(commentRequired);
+        CommentResponseDto actualResponse = commentService.createComment(commentRequired);
 
-        Assertions.assertTrue(actualMessage.contains("Comment created"));
+        Assertions.assertEquals("Comentário criado", actualResponse.message());
         verify(commentRepository).save(any(Comment.class));
     }
 

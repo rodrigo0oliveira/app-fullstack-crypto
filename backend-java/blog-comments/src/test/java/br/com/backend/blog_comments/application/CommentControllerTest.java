@@ -4,7 +4,7 @@ import br.com.backend.blog_comments.application.exceptions.CommentNotFoundExcept
 import br.com.backend.blog_comments.model.Comment;
 import br.com.backend.blog_comments.model.CommentDto;
 import br.com.backend.blog_comments.model.CommentRequired;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import br.com.backend.blog_comments.model.CommentResponseDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +55,7 @@ public class CommentControllerTest {
                 .build();
 
         when(commentService.createComment(any(CommentRequired.class)))
-                .thenReturn(any(String.class));
+                .thenReturn(any(CommentResponseDto.class));
 
         ResultActions response = mockMvc.perform(post("/comments")
                 .contentType(MediaType.APPLICATION_JSON)
