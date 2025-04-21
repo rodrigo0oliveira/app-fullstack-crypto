@@ -1,0 +1,9 @@
+spring:
+  application:
+    name:blog-ai
+  ai:
+    open-ai:
+      chat:
+        options:
+          model: gpt-4o
+      api-key: ${OPENAI_API_KEY}
