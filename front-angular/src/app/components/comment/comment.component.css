@@ -5,10 +5,10 @@
     justify-content: center;
     text-align: center;
     border: 1px solid black;
-    width: 500px;
+    width: 600px;
     height: 150px;
-    background-color: #1E2772;
-    border-radius: 10px;
+    background-color: #4c59d0;
+    border-radius: 8px;
 
 
     .comment-header{
