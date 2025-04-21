@@ -13,11 +13,12 @@ import { HttpResponse } from '@angular/common/http';
 import { CommentResponse } from '../../entities/CommentResponse';
 import { CommentDto } from '../../entities/CommentDto';
 import { CommentComponent } from '../../components/comment/comment.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-content-component',
-  imports: [MenuBarComponent,FormsModule,CommentComponent],
+  imports: [MenuBarComponent,FormsModule,CommentComponent,CommonModule],
   templateUrl: './content-component.component.html',
   styleUrl: './content-component.component.css'
 })
@@ -31,7 +32,7 @@ export class ContentComponent implements OnInit {
 
   comment:string = '';
 
-
+  comments:CommentDto[] =[];
 
   article:Article|any = {
     id:"",
@@ -82,12 +83,12 @@ export class ContentComponent implements OnInit {
 
   showComments(id:string):void{
     console.log("entrei aqui");
-    let comments:CommentDto[] =[];
 
     this.commentService.findCommentsByArticleId(parseInt(id)).subscribe({
       next:(response:CommentDto[])=>{
-        comments = response;
-        console.log(comments);
+        this.comments = response;
+        console.log(this.comments);
+        console.log(response.length)
       },
       error:erro=>{
         console.log("Errooor: "+erro);
