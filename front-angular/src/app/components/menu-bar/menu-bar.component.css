@@ -15,5 +15,8 @@ li{
 
 a{
     color: #1E2772;
+    border: 1px solid #1E2772;
+    padding: 5px;
+    border-radius: 5px;
 }
 

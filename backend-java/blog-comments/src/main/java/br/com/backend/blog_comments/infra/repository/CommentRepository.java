@@ -12,6 +12,6 @@ import java.util.Set;
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     @Query("select new br.com.backend.blog_comments.model.CommentDto" +
-            "(c.content,c.userName,c.createdAt) from Comment c where c.id = :idArticle")
+            "(c.content,c.userName,c.createdAt) from Comment c where c.idArticle = :idArticle")
     Set<CommentDto> findCommentsByIdArticle(Long idArticle);
 }
