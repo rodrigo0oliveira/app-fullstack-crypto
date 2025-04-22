@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContentComponent } from './pages/content-component/content-component.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AiComponent } from './pages/ai/ai.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path:"signup",
         component:SignupComponent
+    },
+    {
+        path:"ai",
+        component:AiComponent
     }
 ];
