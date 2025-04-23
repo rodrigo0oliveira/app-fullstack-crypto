@@ -2,15 +2,16 @@
     <app-menu-bar></app-menu-bar>
     <div class="container-response">
         <div class="text">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates tenetur, labore libero obcaecati perspiciat
-            is eius culpa. Assumenda, accusantium provident pariatur est, nulla tenetur sapiente non in omnis sunt animi eum.</p>
+            <p>{{aiResponse}}</p>
         </div>
     </div>
     <div class="container-request">
         <div class="text">
             <p>Digite sua dúvida abaixo:</p>
     </div>
-        <input type="text">
-        <button>Perguntar</button>
+        <form action="">
+            <input type="text" [(ngModel)]="aiRequest" [ngModelOptions]="{standalone:true}">
+        </form>
+        <button (click)="sendQuestionToAi()">Perguntar</button>
     </div>
 </div>

@@ -17,6 +17,7 @@
 .container-response .text,
 .container-request .text {
     max-width: 600px;
+    max-height: 500px;
     background-color: #ccc;
     padding: 10px;
     border-radius: 10px;
