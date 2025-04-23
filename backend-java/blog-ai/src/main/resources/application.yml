@@ -1,6 +1,6 @@
 spring:
   application:
-    name:blog-ai
+    name: msai
   ai:
     vertex:
       ai:
