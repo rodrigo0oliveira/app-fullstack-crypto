@@ -1,0 +1,17 @@
+<div class="ai">
+    <app-menu-bar></app-menu-bar>
+    <div class="container-response">
+        <div class="text">
+            <p>{{aiResponse}}</p>
+        </div>
+    </div>
+    <div class="container-request">
+        <div class="text">
+            <p>Digite sua dúvida abaixo:</p>
+    </div>
+        <form action="">
+            <input type="text" [(ngModel)]="aiRequest" [ngModelOptions]="{standalone:true}">
+        </form>
+        <button (click)="sendQuestionToAi()">Perguntar</button>
+    </div>
+</div>
