@@ -2,8 +2,12 @@ spring:
   application:
     name:blog-ai
   ai:
-    open-ai:
-      chat:
-        options:
-          model: gpt-4o
-      api-key: ${OPENAI_API_KEY}
+    vertex:
+      ai:
+        gemini:
+          location: us-central1
+          project-id: blog-ai-project
+          chat:
+            options:
+              model: gemini-2.0-flash-lite-001
+              temperature: 0.4
