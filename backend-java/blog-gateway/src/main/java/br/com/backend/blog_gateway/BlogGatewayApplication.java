@@ -20,11 +20,21 @@ public class BlogGatewayApplication {
 
 	@Bean
 	public RouteLocator routes(RouteLocatorBuilder routeLocatorBuilder,AuthenticationFilter authenticationFilter) {
+
 		return routeLocatorBuilder.routes()
 				.route(r-> r.path("/article/**","/article").uri("lb://msarticle"))
+
 				.route(r-> r.path("/auth/**","/auth").uri("lb://mssecurity"))
-				.route(r-> r.path("/comments").uri("lb://mscomments"))
-				.route(r-> r.path("/ai").uri("lb://msai"))
+
+				.route(r-> r.path("/comments")
+						.filters(f->
+								f.filter(authenticationFilter.apply(new AuthenticationFilter.Config())))
+						.uri("lb://mscomments"))
+
+
+				.route(r-> r.path("/ai")
+						.uri("lb://msai"))
+
 				.build();
 	}
 
