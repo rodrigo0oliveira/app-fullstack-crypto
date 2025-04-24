@@ -53,13 +53,11 @@ public class AuthService {
     }
 
     public TokenResponse login(LoginDto login) throws Exception {
-        log.info("entrou no login");
         try {
             log.info("tentanto criar autenticacao com "+login.userName()+login.password());
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(login.userName(), login.password()));
 
-            log.info("criou objeto e vai gerar token");
             return provider.generateToken(authentication);
         }
         catch (AuthenticationException e) {

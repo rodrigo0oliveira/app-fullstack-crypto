@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TokenService } from './token.service';
 import { CommentRequired } from '../entities/CommentRequired';
@@ -26,12 +26,27 @@ export class CommentService {
    }
 
   createComment(commentRequired: CommentRequired): Observable<HttpResponse<CommentResponse>> {
+    let headers:HttpHeaders = this.returnHeadersWithToken();
+
     return this.httpClient.post<CommentResponse>(this.baseUrl, commentRequired,
-       {observe: 'response',});
+
+       {observe: 'response',headers:headers});
   }
 
   findCommentsByArticleId(id:number):Observable<CommentDto[]> {
-    return this.httpClient.get<CommentDto[]>(this.baseUrl+"?articleId="+id);
+    let headers:HttpHeaders = this.returnHeadersWithToken();
+
+    return this.httpClient.get<CommentDto[]>(this.baseUrl+"?articleId="+id,{
+      headers:headers
+    });
+  }
+
+  returnHeadersWithToken():HttpHeaders{
+    const token = this.tokenService.getToken();
+
+    return new HttpHeaders({
+      'Authorization':`Bearer ${token}`
+    });
   }
 
 
