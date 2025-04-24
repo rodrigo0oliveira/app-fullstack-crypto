@@ -4,6 +4,7 @@ import { ContentComponent } from './pages/content-component/content-component.co
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AiComponent } from './pages/ai/ai.component';
+import { CotacaoComponent } from './pages/cotacao/cotacao.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path:"ai",
         component:AiComponent
+    },
+    {
+        path:"cotações",
+        component:CotacaoComponent
     }
 ];
