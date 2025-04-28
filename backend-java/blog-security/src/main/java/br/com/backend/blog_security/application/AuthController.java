@@ -17,11 +17,14 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class AuthController {
 
-    private final AuthService authService;
+    private final SignupService signupService;
+
+    private final LoginService loginService;
+
 
     @PostMapping("/signup")
     public ResponseEntity<String> signup(@RequestBody @Valid UserRequiredDto userRequiredDto) {
-        String  message = authService.signup(userRequiredDto);
+        String  message = signupService.signup(userRequiredDto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(message);
     }
@@ -30,7 +33,7 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody @Valid LoginDto loginDto){
 
         try{
-            TokenResponse tokenResponse = authService.login(loginDto);
+            TokenResponse tokenResponse = loginService.login(loginDto);
 
             return ResponseEntity.ok(tokenResponse);
         }catch (Exception e){
