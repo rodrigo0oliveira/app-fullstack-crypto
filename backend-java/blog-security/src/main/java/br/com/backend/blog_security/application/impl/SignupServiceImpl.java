@@ -6,16 +6,17 @@ import br.com.backend.blog_security.application.ValidateSignup;
 import br.com.backend.blog_security.domain.Role;
 import br.com.backend.blog_security.domain.User;
 import br.com.backend.blog_security.domain.dto.UserRequiredDto;
-import br.com.backend.blog_security.infra.repository.RoleRepository;
 import br.com.backend.blog_security.infra.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 
 @Slf4j
 @RequiredArgsConstructor
+@Service
 public class SignupServiceImpl implements SignupService {
 
     private final RoleService roleService;
