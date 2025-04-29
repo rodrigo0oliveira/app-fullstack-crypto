@@ -1,11 +1,12 @@
 package br.com.backend.blog_comments.application;
 
 import br.com.backend.blog_comments.application.exceptions.CommentNotFoundException;
+import br.com.backend.blog_comments.application.impl.CommentServiceImpl;
 import br.com.backend.blog_comments.infra.repository.CommentRepository;
-import br.com.backend.blog_comments.model.Comment;
-import br.com.backend.blog_comments.model.CommentDto;
-import br.com.backend.blog_comments.model.CommentRequired;
-import br.com.backend.blog_comments.model.CommentResponseDto;
+import br.com.backend.blog_comments.domain.Comment;
+import br.com.backend.blog_comments.domain.dto.CommentDto;
+import br.com.backend.blog_comments.domain.dto.CommentRequired;
+import br.com.backend.blog_comments.domain.dto.CommentResponseDto;
 import org.junit.jupiter.api.Assertions;;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,11 +24,11 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class CommentServiceTest {
 
-    @InjectMocks
-    CommentService commentService;
-
     @Mock
     CommentRepository commentRepository;
+
+    @InjectMocks
+    CommentServiceImpl commentService;
 
     LocalDateTime dateTime = LocalDateTime.now();
 

@@ -20,7 +20,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = ArticleController.class)
 public class ArticleControllerTest {
 
-
     private final MockMvc mockMvc;
 
     private final ObjectMapper objectMapper;
