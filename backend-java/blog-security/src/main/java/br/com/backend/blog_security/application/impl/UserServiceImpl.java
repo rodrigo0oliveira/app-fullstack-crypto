@@ -1,4 +1,4 @@
-package br.com.backend.blog_security.application;
+package br.com.backend.blog_security.application.impl;
 
 import br.com.backend.blog_security.infra.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements UserDetailsService {
+public class UserServiceImpl implements UserDetailsService {
 
     private final UserRepository userRepository;
 
