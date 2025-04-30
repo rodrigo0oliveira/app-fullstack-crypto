@@ -8,7 +8,7 @@ import { CryptoData } from '../../entities/CryptoData';
   selector: 'app-cotacao',
   imports: [MenuBarComponent,CommonModule],
   templateUrl: './cotacao.component.html',
-  styleUrl: './cotacao.component.css'
+  
 })
 export class CotacaoComponent implements OnInit{
 
