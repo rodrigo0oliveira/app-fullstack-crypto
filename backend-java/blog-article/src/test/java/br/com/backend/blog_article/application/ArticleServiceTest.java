@@ -1,5 +1,6 @@
 package br.com.backend.blog_article.application;
 
+import br.com.backend.blog_article.application.impl.ArticleServiceImpl;
 import br.com.backend.blog_article.domain.Article;
 import br.com.backend.blog_article.infra.repository.ArticleRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -16,7 +17,7 @@ import static org.mockito.Mockito.*;
 public class ArticleServiceTest {
 
     @InjectMocks
-    private static ArticleService articleService;
+    private static ArticleServiceImpl articleService;
 
     @Mock
     private static ArticleRepository articleRepository;

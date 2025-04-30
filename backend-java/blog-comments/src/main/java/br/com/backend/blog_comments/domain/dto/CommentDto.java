@@ -1,4 +1,4 @@
-package br.com.backend.blog_comments.model;
+package br.com.backend.blog_comments.domain.dto;
 
 import java.time.LocalDateTime;
 

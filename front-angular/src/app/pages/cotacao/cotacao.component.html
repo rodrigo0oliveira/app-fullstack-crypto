@@ -1,20 +1,21 @@
 <app-menu-bar></app-menu-bar>
-<h1>Cotação em tempo real das criptomoedas mais famosas</h1>
-<div class="table">
-    <table>
-        <thead>
-            <tr>
-                <th>Cripto</th>
-                <th>Moeda</th>
-                <th>Valor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let crypto of cryptoList">
-                <td>{{crypto.cryptoName}}</td>
-                <td>{{crypto.cryptoCurrency}}</td>
-                <td>{{crypto.cryptoPrice}}</td>
-            </tr>
-        </tbody>
+<h1 class="text-center mt-10 font-bold font-mono text-xl">Cotação em tempo real das criptomoedas mais famosas</h1>
+
+<div class="overflow-x-auto mt-20">
+    <table class="table w-3xl mx-auto">
+      <thead>
+        <tr>
+          <th>Crypto</th>
+          <th>Moeda</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-base-200" *ngFor="let crypto of cryptoList">
+          <td>{{crypto.cryptoName}}</td>
+          <td>{{crypto.cryptoCurrency}}</td>
+          <td>{{crypto.cryptoPrice}}</td>
+        </tr>
+      </tbody>
     </table>
-</div>
+  </div>

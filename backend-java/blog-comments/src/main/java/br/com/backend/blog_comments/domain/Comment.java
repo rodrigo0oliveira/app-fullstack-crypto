@@ -1,4 +1,4 @@
-package br.com.backend.blog_comments.model;
+package br.com.backend.blog_comments.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

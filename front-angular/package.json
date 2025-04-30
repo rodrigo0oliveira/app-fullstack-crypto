@@ -9,9 +9,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "cypress:web": "npx cypress open",
-    "cypress:headless": "npx cypress run --browser electron"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +21,9 @@
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
+    "@tailwindcss/postcss": "^4.1.4",
     "ngx-toastr": "^19.0.0",
+    "postcss": "^8.5.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -36,8 +36,8 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^22.15.0",
-    "cypress": "^13.17.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress": "^14.3.2",
+    "daisyui": "^5.0.29",
     "esbuild": "^0.25.3",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
@@ -45,10 +45,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "tailwindcss": "^4.1.4",
     "typescript": "~5.7.2"
-  },
-  "cypress-cucumber-preprocessor":{
-    "nonGlobalStepDefinitions":true,
-    "stepDefinitions":"cypress/e2e/step_definitions"
   }
 }

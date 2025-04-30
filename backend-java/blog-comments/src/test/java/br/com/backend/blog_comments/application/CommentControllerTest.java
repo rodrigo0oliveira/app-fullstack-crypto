@@ -1,10 +1,11 @@
 package br.com.backend.blog_comments.application;
 
 import br.com.backend.blog_comments.application.exceptions.CommentNotFoundException;
-import br.com.backend.blog_comments.model.Comment;
-import br.com.backend.blog_comments.model.CommentDto;
-import br.com.backend.blog_comments.model.CommentRequired;
-import br.com.backend.blog_comments.model.CommentResponseDto;
+
+import br.com.backend.blog_comments.domain.Comment;
+import br.com.backend.blog_comments.domain.dto.CommentDto;
+import br.com.backend.blog_comments.domain.dto.CommentRequired;
+import br.com.backend.blog_comments.domain.dto.CommentResponseDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

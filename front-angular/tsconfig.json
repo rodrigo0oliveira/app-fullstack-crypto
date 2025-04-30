@@ -3,7 +3,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "types": ["cypress", "@badeball/cypress-cucumber-preprocessor","node"],
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -19,10 +18,15 @@
     "target": "ES2022",
     "module": "ES2022"
   },
+  "include": ["**/*.ts"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "cypress-cucumber-preprocessor":{
+    "nonGlobalStepDefinitions":true,
+    "stepDefinitions":"cypress/e2e/step_definitions/**/.js"
   }
 }

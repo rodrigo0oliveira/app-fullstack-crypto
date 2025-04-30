@@ -39,4 +39,3 @@ Scenario: Submitting with an already registered email
   Then I click the submit button
   Then I should see "O e-mail informado já está cadastrado." failed message
   And I should stay on the signup page
-
