@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit{
     this.articleService.getAllArticle().subscribe({
       next:(response)=>{
         this.articles = response;
-        console.log(this.articles);
       }
     })
   }

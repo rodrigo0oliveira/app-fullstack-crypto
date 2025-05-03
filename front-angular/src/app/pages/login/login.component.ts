@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DefaultLayoutLoginComponent } from '../../components/default-layout-login/default-layout-login.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
@@ -17,7 +17,7 @@ import { TokenResponse } from '../../entities/TokenResponse';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent{
 
   loginRequired:LoginRequired = {
     userName:"",
@@ -65,9 +65,6 @@ export class LoginComponent {
         this.toastService.error(error.error)
       }
     })
-
-
-
   }
 
   navigate(route:string){
