@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-ai',
   imports: [MenuBarComponent,CommonModule,FormsModule],
   templateUrl: './ai.component.html',
-  styleUrl: './ai.component.css'
 })
 export class AiComponent {
 

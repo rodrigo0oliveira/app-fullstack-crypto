@@ -1,17 +1,17 @@
-<div class="ai">
-    <app-menu-bar></app-menu-bar>
-    <div class="container-response">
-        <div class="text">
+<app-menu-bar></app-menu-bar>
+<div class="min-h-screen flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center ">
+        <div class="max-w-2xl max-h-2xl mb-20">
             <p>{{aiResponse}}</p>
         </div>
-    </div>
-    <div class="container-request">
-        <div class="text">
-            <p>Digite sua dúvida abaixo:</p>
-    </div>
-        <form action="">
-            <input type="text" [(ngModel)]="aiRequest" [ngModelOptions]="{standalone:true}">
-        </form>
-        <button (click)="sendQuestionToAi()">Perguntar</button>
+        <div class="text-center">
+            <div class="mb-5">
+                <p>Digite sua dúvida abaixo:</p>
+            </div>
+            <form action="">
+                <input type="text" [(ngModel)]="aiRequest" [ngModelOptions]="{standalone:true}" placeholder="" class="input" />
+            </form>
+            <button class="btn btn-active mt-5" (click)="sendQuestionToAi()">Perguntar</button>
+        </div>
     </div>
 </div>

@@ -1,12 +1,15 @@
-<div class="container-comment">
-    <div class="comment-header">
-        <span class="material-symbols-outlined">
-            person
-            </span>
-        <p>{{userName}}</p>
-        <p>{{date}}</p>
-    </div>
-    <div class="comment-content">
-        <p>{{content}}</p>
-    </div>
-</div>
+<div class="flex space-x-4 p-4 border rounded-xl w-[500px] mb-2">
+   
+    <img src="user.png" alt="Avatar" class="w-10 h-10 rounded-full">
+  
+    <div class="flex-1">
+      <div class="flex justify-between items-center">
+        <h4 class="font-bold text-gray-800 dark:text-gray-100">{{userName}}</h4>
+        <span class="text-sm text-gray-500 dark:text-gray-400">{{date}}</span>
+      </div>
+  
+      <p class="text-gray-700 dark:text-gray-300 mt-1">
+        {{content}}
+      </p>
+  </div>
+  
