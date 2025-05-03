@@ -20,7 +20,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-content-component',
   imports: [MenuBarComponent,FormsModule,CommentComponent,CommonModule],
   templateUrl: './content-component.component.html',
-  styleUrl: './content-component.component.css'
 })
 
 export class ContentComponent implements OnInit {
@@ -82,7 +81,6 @@ export class ContentComponent implements OnInit {
   }
 
   showComments(id:string):void{
-    console.log("entrei aqui");
 
     this.commentService.findCommentsByArticleId(parseInt(id)).subscribe({
       next:(response:CommentDto[])=>{
@@ -111,6 +109,9 @@ export class ContentComponent implements OnInit {
           }
           else{
             this.toastService.success(body);
+            if(this.id){
+              this.showComments(this.id);
+            }
           }
         },
         error:error=>{
