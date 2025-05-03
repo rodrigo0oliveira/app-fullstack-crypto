@@ -24,6 +24,10 @@ export class ArticleService {
     return this.articleData;
   }
 
+  getAllArticle():Observable<Article[]>{
+    return this.http.get<Article[]>(this.baseURL);
+  }
+
 
 
 }
