@@ -12,7 +12,7 @@ Esta é uma aplicação fullstack desenvolvida com **Angular** e **Java Spring B
 - 🤖 **Integração com a API da Gemini** para responder perguntas sobre cripto
 - 💬 **Sistema de comentários** por artigo com relacionamento entre entidades
 - 🧱 **Arquitetura de microserviços** no backend para escalabilidade
-- 🎨 **Frontend moderno** com Angular e Angular Material
+- 🎨 **Frontend moderno** com Angular,Typescript,Tailwind e DasyUI
 
 ---
 
@@ -33,6 +33,8 @@ Esta é uma aplicação fullstack desenvolvida com **Angular** e **Java Spring B
 - Angular 17
 - TypeScript
 - CSS3
+- Tailwind
+- DasyUI
 
 ---
 
@@ -49,9 +51,10 @@ Esta é uma aplicação fullstack desenvolvida com **Angular** e **Java Spring B
 - Mockito
 
 ## 🖼️ Imagens do Projeto
-![image](https://github.com/user-attachments/assets/178a143d-4771-49f1-99b1-2c7e41c32a6e)
-![image](https://github.com/user-attachments/assets/03a33a72-fe75-4652-ac14-d6e3f778cfe0)
-![image](https://github.com/user-attachments/assets/09ee7d94-fa48-4f1a-afe6-d9699c70d43d)
+![image](https://github.com/user-attachments/assets/7f752530-3941-4f41-b90e-0a96044ffd1e)
+![image](https://github.com/user-attachments/assets/49099971-faca-4b7b-844d-1a660e8ce4c7)
+![image](https://github.com/user-attachments/assets/d8538d87-85a3-423a-8102-ed5ce7c5d288)
+
 
 
 
