@@ -17,7 +17,7 @@ public class AiController {
 
     @PostMapping()
     public ResponseEntity<MessageDto> askAi(@RequestBody String message){
-        MessageDto messageDto = aiService.sendMessageToGemini(message);
+        MessageDto messageDto = aiService.sendRequestToAi(message);
 
         return ResponseEntity.ok(messageDto);
     }
